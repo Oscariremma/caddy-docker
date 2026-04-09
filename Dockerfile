@@ -19,6 +19,10 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o /usr/bin/caddy main.go
 # Final stage
 FROM scratch
 
+# Configure standard XDG Base Directories for Caddy
+ENV XDG_CONFIG_HOME /config
+ENV XDG_DATA_HOME /data
+
 # Copy over the certificates and timezone data
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo

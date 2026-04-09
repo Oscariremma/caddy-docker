@@ -15,6 +15,14 @@ This project is designed with automatic dependency updates and minimal resulting
 2. **From Scratch**: The final Docker image uses `scratch` (distroless) rather than Alpine/Debian, containing purely the static binary and essential certificate/timezone data. This practically eliminates OS-level vulnerabilities and significantly reduces the final image size.
 3. **Dynamic Tagging**: GitHub actions will dynamically parse the Caddy version and Docker Proxy version during build, generating informative tags (e.g., `caddy-v2.11.2-cdp-v2.12.0`).
 
+## Configuration Data
+
+The image is configured to store configuration and data in predictable locations:
+- **`XDG_CONFIG_HOME`**: `/config`
+- **`XDG_DATA_HOME`**: `/data`
+
+When running the container, you should mount volumes to `/config` and `/data` to persist your configuration and Let's Encrypt certificates.
+
 ## Automated Dependency Updates
 
 This repository is configured to keep itself up to date via **Dependabot**.
