@@ -6,8 +6,11 @@ WORKDIR /src
 COPY go.mod go.sum ./
 RUN go mod download
 
-# We need tzdata and ca-certificates for scratch
-RUN apk add --no-cache ca-certificates tzdata
+# We need tzdata, ca-certificates, and git to download error pages
+RUN apk add --no-cache ca-certificates tzdata git
+
+# Clone just the gh-pages branch into a temporary directory
+RUN git clone --depth 1 --branch gh-pages --single-branch https://github.com/tarampampam/error-pages.git /tmp/error-pages
 
 # Copy source and build
 COPY main.go ./
@@ -19,6 +22,9 @@ FROM scratch
 # Copy over the certificates and timezone data
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
+
+# Copy the requested error pages directly from builder's git clone
+COPY --from=builder /tmp/error-pages/lost-in-space /srv/error-pages
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
