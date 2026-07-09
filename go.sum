@@ -251,8 +251,8 @@ github.com/libdns/cloudflare v0.2.2 h1:XWHv+C1dDcApqazlh08Q6pjytYLgR2a+Y3xrXFu0v
 github.com/libdns/cloudflare v0.2.2/go.mod h1:w9uTmRCDlAoafAsTPnn2nJ0XHK/eaUMh86DUk8BWi60=
 github.com/libdns/libdns v1.1.1 h1:wPrHrXILoSHKWJKGd0EiAVmiJbFShguILTg9leS/P/U=
 github.com/libdns/libdns v1.1.1/go.mod h1:4Bj9+5CQiNMVGf87wjX4CY3HQJypUHRuLvlsfsZqLWQ=
-github.com/lucaslorentz/caddy-docker-proxy/v2 v2.13.0 h1:dEnvtN4Dux1rUOHpYnfrFRMlSNPZcpT64xZh5+X0J7s=
-github.com/lucaslorentz/caddy-docker-proxy/v2 v2.13.0/go.mod h1:/w8LiKuz7dvsQKUZVThqlSrfISROrpXEIMej30gnkoI=
+github.com/lucaslorentz/caddy-docker-proxy/v2 v2.13.1 h1:y0TBRvGKrE+8/fB8Zsj+G1nCv/p35sa0F4uYs897Isw=
+github.com/lucaslorentz/caddy-docker-proxy/v2 v2.13.1/go.mod h1:/w8LiKuz7dvsQKUZVThqlSrfISROrpXEIMej30gnkoI=
 github.com/magiconair/properties v1.8.0/go.mod h1:PppfXfuXeibc/6YijjN8zIbojt8czPbwD3XqdrwzmxQ=
 github.com/manifoldco/promptui v0.9.0 h1:3V4HzJk1TtXW1MTZMP7mdlwbBpIinw3HztaIlYthEiA=
 github.com/manifoldco/promptui v0.9.0/go.mod h1:ka04sppxSGFAtxX0qhlYQjISsg9mR4GWtQEhdbn6Pgg=
