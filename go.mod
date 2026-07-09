@@ -5,7 +5,7 @@ go 1.26
 require (
 	github.com/caddy-dns/cloudflare v0.2.4
 	github.com/caddyserver/caddy/v2 v2.11.4
-	github.com/lucaslorentz/caddy-docker-proxy/v2 v2.13.0
+	github.com/lucaslorentz/caddy-docker-proxy/v2 v2.13.1
 )
 
 require (
