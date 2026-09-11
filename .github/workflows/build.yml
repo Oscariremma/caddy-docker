@@ -38,8 +38,10 @@ jobs:
         run: |
           CADDY_VER=$(grep "github.com/caddyserver/caddy/v2" go.mod | head -n 1 | awk '{print $2}')
           CDP_VER=$(grep "github.com/lucaslorentz/caddy-docker-proxy/v2" go.mod | head -n 1 | awk '{print $2}')
+          CROWDSEC_VER=$(grep "github.com/hslatman/caddy-crowdsec-bouncer" go.mod | head -n 1 | awk '{print $2}')
           echo "caddy=$CADDY_VER" >> $GITHUB_OUTPUT
           echo "cdp=$CDP_VER" >> $GITHUB_OUTPUT
+          echo "crowdsec=$CROWDSEC_VER" >> $GITHUB_OUTPUT
 
       - name: Extract Docker metadata
         id: meta
@@ -48,7 +50,7 @@ jobs:
           images: ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
-            type=raw,value=caddy-${{ steps.versions.outputs.caddy }}-cdp-${{ steps.versions.outputs.cdp }}
+            type=raw,value=caddy-${{ steps.versions.outputs.caddy }}-cdp-${{ steps.versions.outputs.cdp }}-crowdsec-${{ steps.versions.outputs.crowdsec }}
             type=ref,event=branch
             type=ref,event=pr
 

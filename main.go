@@ -6,6 +6,7 @@ import (
 
 	_ "github.com/caddy-dns/cloudflare"
 	_ "github.com/lucaslorentz/caddy-docker-proxy/v2"
+	_ "github.com/hslatman/caddy-crowdsec-bouncer/appsec"
 )
 
 func main() {
