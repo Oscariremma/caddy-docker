@@ -6,6 +6,7 @@ This repository automates the building and publishing of a custom [Caddy Server]
 
 - **[`caddy-docker-proxy`](https://github.com/lucaslorentz/caddy-docker-proxy)**: Enables configuration of Caddy via Docker labels.
 - **[`cloudflare-dns`](https://github.com/caddy-dns/cloudflare)**: Enables solving the DNS challenge for Let's Encrypt using Cloudflare's API.
+- **[`caddy-crowdsec-bouncer`](https://github.com/hslatman/caddy-crowdsec-bouncer)**: Enables integration with CrowdSec's appsec for real-time threat intelligence.
 
 ## Architecture
 
@@ -13,7 +14,7 @@ This project is designed with automatic dependency updates and minimal resulting
 
 1. **Go Module approach**: The Caddy server and plugins are pinned in a standard Go module setup (`go.mod`). This makes the ecosystem fully transparent to bots like Dependabot.
 2. **From Scratch**: The final Docker image uses `scratch` (distroless) rather than Alpine/Debian, containing purely the static binary and essential certificate/timezone data. This practically eliminates OS-level vulnerabilities and significantly reduces the final image size.
-3. **Dynamic Tagging**: GitHub actions will dynamically parse the Caddy version and Docker Proxy version during build, generating informative tags (e.g., `caddy-v2.11.2-cdp-v2.12.0`).
+3. **Dynamic Tagging**: GitHub actions will dynamically parse the Caddy version and Docker Proxy version during build, generating informative tags (e.g., `caddy-v2.11.2-cdp-v2.12.0-crowdsec-v0.14.1`).
 
 ## Configuration Data
 
